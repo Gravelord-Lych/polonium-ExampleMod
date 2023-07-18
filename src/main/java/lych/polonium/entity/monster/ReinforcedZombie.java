@@ -33,7 +33,7 @@ public class ReinforcedZombie extends Zombie {
     public boolean doHurtTarget(Entity target) {
         boolean hurt = super.doHurtTarget(target);
         if (hurt && target instanceof LivingEntity living && !(target instanceof Enemy)) {
-            living.addEffect(new MobEffectInstance(MobEffects.HUNGER, 20 * 20, 1));
+            living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 20, 1));
         }
         return hurt;
     }
