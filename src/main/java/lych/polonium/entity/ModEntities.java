@@ -1,6 +1,7 @@
 package lych.polonium.entity;
 
 import lych.polonium.Polonium;
+import lych.polonium.entity.monster.DispenserZombie;
 import lych.polonium.entity.monster.Ghoul;
 import lych.polonium.entity.monster.ReinforcedZombie;
 import net.minecraft.world.entity.EntityType;
@@ -15,6 +16,8 @@ import net.minecraftforge.registries.RegistryObject;
 @Mod.EventBusSubscriber(modid = Polonium.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Polonium.MOD_ID);
+    public static final RegistryObject<EntityType<DispenserZombie>> DISPENSER_ZOMBIE = ENTITIES.register(ModEntityNames.DISPENSER_ZOMBIE,
+            () -> EntityType.Builder.of(DispenserZombie::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(8).build(ModEntityNames.DISPENSER_ZOMBIE));
     public static final RegistryObject<EntityType<Ghoul>> GHOUL = ENTITIES.register(ModEntityNames.GHOUL,
             () -> EntityType.Builder.of(Ghoul::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(8).build(ModEntityNames.GHOUL));
     public static final RegistryObject<EntityType<ReinforcedZombie>> REINFORCED_ZOMBIE = ENTITIES.register(ModEntityNames.REINFORCED_ZOMBIE,
@@ -22,6 +25,7 @@ public final class ModEntities {
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(DISPENSER_ZOMBIE.get(), DispenserZombie.createAttributes().build());
         event.put(GHOUL.get(), Ghoul.createAttributes().build());
         event.put(REINFORCED_ZOMBIE.get(), ReinforcedZombie.createAttributes().build());
     }

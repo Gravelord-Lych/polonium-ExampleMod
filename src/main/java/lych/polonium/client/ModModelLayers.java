@@ -8,6 +8,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public final class ModModelLayers {
+    public static final ModelLayerLocation DISPENSER_ZOMBIE = createMain(ModEntityNames.DISPENSER_ZOMBIE);
+    public static final ModelLayerLocation DISPENSER_ZOMBIE_INNER_ARMOR = createInnerArmor(ModEntityNames.DISPENSER_ZOMBIE);
+    public static final ModelLayerLocation DISPENSER_ZOMBIE_OUTER_ARMOR = createOuterArmor(ModEntityNames.DISPENSER_ZOMBIE);
     public static final ModelLayerLocation GHOUL = createMain(ModEntityNames.GHOUL);
     public static final ModelLayerLocation REINFORCED_ZOMBIE = createMain(ModEntityNames.REINFORCED_ZOMBIE);
     public static final ModelLayerLocation REINFORCED_ZOMBIE_INNER_ARMOR = createInnerArmor(ModEntityNames.REINFORCED_ZOMBIE);

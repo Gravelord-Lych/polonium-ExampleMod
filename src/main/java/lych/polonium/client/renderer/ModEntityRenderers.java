@@ -19,6 +19,7 @@ import java.util.function.Supplier;
 public class ModEntityRenderers {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.DISPENSER_ZOMBIE.get(), DispenserZombieRenderer::new);
         event.registerEntityRenderer(ModEntities.GHOUL.get(), GhoulRenderer::new);
         event.registerEntityRenderer(ModEntities.REINFORCED_ZOMBIE.get(), ReinforcedZombieRenderer::new);
     }
@@ -28,6 +29,9 @@ public class ModEntityRenderers {
         Supplier<LayerDefinition> humanModelLayerDef = () -> LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F), 64, 64);
         Supplier<LayerDefinition> innerArmor = () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32);
         Supplier<LayerDefinition> outerArmor = () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32);
+        event.registerLayerDefinition(ModModelLayers.DISPENSER_ZOMBIE, humanModelLayerDef);
+        event.registerLayerDefinition(ModModelLayers.DISPENSER_ZOMBIE_INNER_ARMOR, innerArmor);
+        event.registerLayerDefinition(ModModelLayers.DISPENSER_ZOMBIE_OUTER_ARMOR, outerArmor);
         event.registerLayerDefinition(ModModelLayers.GHOUL, humanModelLayerDef);
         event.registerLayerDefinition(ModModelLayers.REINFORCED_ZOMBIE, humanModelLayerDef);
         event.registerLayerDefinition(ModModelLayers.REINFORCED_ZOMBIE_INNER_ARMOR, innerArmor);
