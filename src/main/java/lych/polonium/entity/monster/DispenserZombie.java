@@ -25,6 +25,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
+import java.util.Objects;
+
 public class DispenserZombie extends Zombie implements RangedAttackMob {
     public DispenserZombie(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
@@ -33,6 +35,11 @@ public class DispenserZombie extends Zombie implements RangedAttackMob {
     public static AttributeSupplier.Builder createAttributes() {
         return Zombie.createAttributes()
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0);
+    }
+
+    @Override
+    protected void randomizeReinforcementsChance() {
+        Objects.requireNonNull(getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE)).setBaseValue(0);
     }
 
     @Override
