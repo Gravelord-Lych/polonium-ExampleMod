@@ -98,10 +98,12 @@ public class SkeletonWizard extends AbstractSkeleton {
 
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
+        // Must be placed before super.readAdditionalSaveData(tag) otherwise the reinforced Skeleton Wizard will have
+        // incorrect health (min(trueHealth, 100)).
+        setReinforced(tag.getBoolean(REINFORCED_TAG), false);
         super.readAdditionalSaveData(tag);
         setDoesPhysicalDamage(tag.getBoolean(DOES_PHYSICAL_DAMAGE_TAG));
-        setReinforced(tag.getBoolean(REINFORCED_TAG), false);
-        // The re-reassessment of thw weapon goal is necessary because Skeleton Wizard's way of attacking may have changed.
+        // The "re-reassessment" of thw weapon goal is necessary because Skeleton Wizard's way of attacking may have changed.
         reassessWeaponGoal();
     }
 
@@ -125,7 +127,7 @@ public class SkeletonWizard extends AbstractSkeleton {
     private void preformPotionAttack(LivingEntity target) {
         Vec3 movement = target.getDeltaMovement();
         double x = target.getX() + movement.x - this.getX();
-        double y = target.getEyeY() - (double)1.1F - this.getY();
+        double y = target.getEyeY() - 1.1 - this.getY();
         double z = target.getZ() + movement.z - this.getZ();
         double distance = Math.sqrt(x * x + z * z);
         ThrownPotion thrownPotion = findPotion(target);
@@ -193,7 +195,7 @@ public class SkeletonWizard extends AbstractSkeleton {
     @Override
     public boolean canBeAffected(MobEffectInstance instance) {
         MobEffect effect = instance.getEffect();
-        if (effect == MobEffects.REGENERATION || effect == MobEffects.POISON) {
+        if (!super.canBeAffected(instance)) {
             return false;
         }
         return effect.isBeneficial() && isReinforced();
