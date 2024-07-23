@@ -15,6 +15,9 @@ public final class ModModelLayers {
     public static final ModelLayerLocation REINFORCED_ZOMBIE = createMain(ModEntityNames.REINFORCED_ZOMBIE);
     public static final ModelLayerLocation REINFORCED_ZOMBIE_INNER_ARMOR = createInnerArmor(ModEntityNames.REINFORCED_ZOMBIE);
     public static final ModelLayerLocation REINFORCED_ZOMBIE_OUTER_ARMOR = createOuterArmor(ModEntityNames.REINFORCED_ZOMBIE);
+    public static final ModelLayerLocation SKELETON_WIZARD = createMain(ModEntityNames.SKELETON_WIZARD);
+    public static final ModelLayerLocation SKELETON_WIZARD_INNER_ARMOR = createInnerArmor(ModEntityNames.SKELETON_WIZARD);
+    public static final ModelLayerLocation SKELETON_WIZARD_OUTER_ARMOR = createOuterArmor(ModEntityNames.SKELETON_WIZARD);
 
     private ModModelLayers() {}
 
