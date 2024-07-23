@@ -12,6 +12,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -191,7 +192,11 @@ public class SkeletonWizard extends AbstractSkeleton {
 
     @Override
     public boolean canBeAffected(MobEffectInstance instance) {
-        return instance.getEffect().isBeneficial() && isReinforced();
+        MobEffect effect = instance.getEffect();
+        if (effect == MobEffects.REGENERATION || effect == MobEffects.POISON) {
+            return false;
+        }
+        return effect.isBeneficial() && isReinforced();
     }
 
     private ThrownPotion findPotion(LivingEntity target) {
