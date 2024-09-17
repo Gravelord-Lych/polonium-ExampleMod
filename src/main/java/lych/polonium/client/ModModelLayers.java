@@ -3,10 +3,7 @@ package lych.polonium.client;
 import lych.polonium.Utils;
 import lych.polonium.entity.ModEntityNames;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-@OnlyIn(Dist.CLIENT)
 public final class ModModelLayers {
     public static final ModelLayerLocation DISPENSER_ZOMBIE = createMain(ModEntityNames.DISPENSER_ZOMBIE);
     public static final ModelLayerLocation DISPENSER_ZOMBIE_INNER_ARMOR = createInnerArmor(ModEntityNames.DISPENSER_ZOMBIE);

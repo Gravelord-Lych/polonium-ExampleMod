@@ -12,10 +12,7 @@ import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-@OnlyIn(Dist.CLIENT)
 public class SkeletonWizardEyesLayer extends RenderLayer<AbstractSkeleton, SkeletonModel<AbstractSkeleton>> {
     private static final ResourceLocation SKELETON_WIZARD_EYES = Utils.prefix("textures/entity/skeleton_wizard/skeleton_wizard_eyes.png");
     private static final RenderType SKELETON_WIZARD_EYES_RENDER_TYPE = RenderType.entityCutoutNoCull(SKELETON_WIZARD_EYES);

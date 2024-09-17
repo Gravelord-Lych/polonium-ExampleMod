@@ -20,10 +20,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-@OnlyIn(Dist.CLIENT)
 public class DispenserZombieHeadLayer extends RenderLayer<DispenserZombie, ZombieModel<DispenserZombie>> {
     private final BlockRenderDispatcher blockRenderer;
     private final ItemRenderer itemRenderer;

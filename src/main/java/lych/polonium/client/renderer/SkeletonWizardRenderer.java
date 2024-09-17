@@ -7,10 +7,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.SkeletonRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-@OnlyIn(Dist.CLIENT)
 public class SkeletonWizardRenderer extends SkeletonRenderer {
     private static final ResourceLocation SKELETON_WIZARD = Utils.prefix("textures/entity/skeleton_wizard/skeleton_wizard.png");
 
