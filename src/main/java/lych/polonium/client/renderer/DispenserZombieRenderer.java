@@ -6,10 +6,7 @@ import lych.polonium.entity.monster.DispenserZombie;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.renderer.entity.AbstractZombieRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-@OnlyIn(Dist.CLIENT)
 public class DispenserZombieRenderer extends AbstractZombieRenderer<DispenserZombie, ZombieModel<DispenserZombie>> {
     public DispenserZombieRenderer(EntityRendererProvider.Context context) {
         super(context,
