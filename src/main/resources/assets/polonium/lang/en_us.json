@@ -1,6 +1,8 @@
 {
   "entity.polonium.dispenser_zombie": "Dispenser Zombie",
   "entity.polonium.ghoul": "Ghoul",
+  "entity.polonium.minion": "Minion",
+  "entity.polonium.necromancer": "Necromancer",
   "entity.polonium.reinforced_zombie": "Reinforced Zombie",
   "entity.polonium.skeleton_wizard": "Skeleton Wizard"
 }

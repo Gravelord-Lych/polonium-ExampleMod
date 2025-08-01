@@ -1,6 +1,8 @@
 {
   "entity.polonium.dispenser_zombie": "发射器僵尸",
   "entity.polonium.ghoul": "食尸鬼",
+  "entity.polonium.minion": "僵尸仆从",
+  "entity.polonium.necromancer": "死灵召唤者",
   "entity.polonium.reinforced_zombie": "强化僵尸",
   "entity.polonium.skeleton_wizard": "骷髅法师"
 }

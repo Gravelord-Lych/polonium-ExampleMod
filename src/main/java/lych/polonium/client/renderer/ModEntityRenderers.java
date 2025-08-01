@@ -22,6 +22,8 @@ public class ModEntityRenderers {
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.DISPENSER_ZOMBIE.get(), DispenserZombieRenderer::new);
         event.registerEntityRenderer(ModEntities.GHOUL.get(), GhoulRenderer::new);
+        event.registerEntityRenderer(ModEntities.MINION.get(), MinionRenderer::new);
+        event.registerEntityRenderer(ModEntities.NECROMANCER.get(), NecromancerRenderer::new);
         event.registerEntityRenderer(ModEntities.REINFORCED_ZOMBIE.get(), ReinforcedZombieRenderer::new);
         event.registerEntityRenderer(ModEntities.SKELETON_WIZARD.get(), SkeletonWizardRenderer::new);
     }
@@ -36,6 +38,10 @@ public class ModEntityRenderers {
         event.registerLayerDefinition(ModModelLayers.DISPENSER_ZOMBIE_INNER_ARMOR, innerArmor);
         event.registerLayerDefinition(ModModelLayers.DISPENSER_ZOMBIE_OUTER_ARMOR, outerArmor);
         event.registerLayerDefinition(ModModelLayers.GHOUL, humanModelLayerDef);
+        event.registerLayerDefinition(ModModelLayers.MINION, humanModelLayerDef);
+        event.registerLayerDefinition(ModModelLayers.MINION_INNER_ARMOR, innerArmor);
+        event.registerLayerDefinition(ModModelLayers.MINION_OUTER_ARMOR, outerArmor);
+        event.registerLayerDefinition(ModModelLayers.NECROMANCER, humanModelLayerDef);
         event.registerLayerDefinition(ModModelLayers.REINFORCED_ZOMBIE, humanModelLayerDef);
         event.registerLayerDefinition(ModModelLayers.REINFORCED_ZOMBIE_INNER_ARMOR, innerArmor);
         event.registerLayerDefinition(ModModelLayers.REINFORCED_ZOMBIE_OUTER_ARMOR, outerArmor);
